@@ -1,8 +1,11 @@
 import React from "react";
-import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="text-l font-custom text-center font-extrabold text-light-text ">
+      Hello Tailwind
+    </div>
+  );
 }
 
 export default App;
