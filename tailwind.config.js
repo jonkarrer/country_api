@@ -7,6 +7,10 @@ module.exports = {
       custom: ["Nunito Sans", "sans-serif"],
     },
     colors: {
+      regular: {
+        blue: "blue",
+        purple: "purple",
+      },
       dark: {
         elements: "hsl(209, 23%, 22%)",
         background: "hsl(207, 26%, 17%)",
