@@ -4,17 +4,17 @@
 
 @layer base {
   @font-face {
-    font-family: Nunito Sans;
+    font-family: "Nunito Sans";
     font-weight: 400;
     src: url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
   }
   @font-face {
-    font-family: Nunito Sans;
+    font-family: "Nunito Sans";
     font-weight: 600;
     src: url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
   }
   @font-face {
-    font-family: Nunito Sans;
+    font-family: "Nunito Sans";
     font-weight: 800;
     src: url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
   }

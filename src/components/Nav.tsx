@@ -1,10 +1,18 @@
 import React from "react";
+import Moon from "../assets/moon";
+import useDarkMode from "../hooks/useDarkMode";
 
-const Nav = (): JSX.Element => {
+const Nav = () => {
+  const [colorTheme, setTheme]: any = useDarkMode();
   return (
-    <nav className="h-20 bg-light-back flex justify-between ">
-      <h1 className="font-bold font-custom ">Where in the World?</h1>
-      <div className="">darkmode</div>
+    <nav className="h-14 flex justify-between items-center shadow px-16 dark:bg-dark-elements dark:text-dark-text">
+      <h1 className="font-bold font-mono text-lg">Where in the world?</h1>
+      <div className="flex items-center" onClick={() => setTheme(colorTheme)}>
+        <a className="m-2">
+          <Moon fill={colorTheme === "light" ? "white" : "black"} width={15} />
+        </a>
+        <p className="text-sm">Dark Mode</p>
+      </div>
     </nav>
   );
 };
