@@ -19,15 +19,15 @@ const CountryTile = ({ image, name, population, region, capital }: Tile) => {
         </h2>
         <div className="space-y-1 mx-5 text-xs">
           <p>
-            <strong>Population:</strong>
+            <strong>Population: </strong>
             {population}
           </p>
           <p>
-            <strong>Region:</strong>
+            <strong>Region: </strong>
             {region}
           </p>
           <p>
-            <strong>Capital:</strong>
+            <strong>Capital: </strong>
             {capital}
           </p>
         </div>
