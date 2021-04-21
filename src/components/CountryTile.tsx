@@ -20,7 +20,7 @@ const CountryTile = ({ image, name, population, region, capital }: Tile) => {
         }}
       ></div>
       <div className="grid">
-        <h2 className="mx-3 my-3 text-base">
+        <h2 className="mx-3 my-3 text-sm">
           <strong>{name}</strong>
         </h2>
         <div className="space-y-1 mx-3 text-xs">
