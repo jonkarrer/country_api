@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="font-custom dark:text-dark-text dark:bg-dark-background">
       <Search />
-      <div className="flex flex-wrap justify-center w-screen bg-dark-text ">
+      <div className="flex flex-wrap justify-center w-screen ">
         <Tile
           image={flag}
           name="Merica"
