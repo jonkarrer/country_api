@@ -4,10 +4,10 @@ import Glass from "../assets/glass";
 export default function Search() {
   const [hidden, setHidden] = useState(true);
   return (
-    <div className="h-32 flex justify-between items-center dark:bg-dark-background">
+    <div className="sticky top-0 z-20 h-32 flex justify-between items-center">
       <form
         action="GET"
-        className="text-xs mx-16 px-6 py-3 w-1/3 rounded flex items-center shadow dark:bg-dark-elements"
+        className="bg-light-back text-xs mx-16 px-6 py-3 w-1/3 rounded flex items-center shadow dark:bg-dark-elements"
       >
         <label htmlFor="input">
           <Glass width={15} />
@@ -21,7 +21,7 @@ export default function Search() {
       <div>
         <div
           onClick={() => setHidden(!hidden)}
-          className=" relative text-xs mx-16 px-6 py-3 rounded flex items-center shadow cursor-pointer dark:bg-dark-elements"
+          className=" relative text-xs mx-16 px-6 py-3 rounded flex items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements"
         >
           <p>Filter by Region</p>
           <span className="ml-5 text-m">&or;</span>
