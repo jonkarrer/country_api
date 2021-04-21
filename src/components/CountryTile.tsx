@@ -10,14 +10,20 @@ interface Tile {
 const CountryTile = ({ image, name, population, region, capital }: Tile) => {
   return (
     <div className=" m-6 h-64 w-52 dark:bg-dark-elements shadow font-normal">
-      <div className="h-32">
-        <img src={image} alt="flag" className="h-full object-cover" />
-      </div>
+      <div
+        className="h-32"
+        style={{
+          background: `url(${image})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
       <div className="grid">
-        <h2 className="mx-5 my-2.5 text-base">
+        <h2 className="mx-3 my-3 text-base">
           <strong>{name}</strong>
         </h2>
-        <div className="space-y-1 mx-5 text-xs">
+        <div className="space-y-1 mx-3 text-xs">
           <p>
             <strong>Population: </strong>
             {population}
