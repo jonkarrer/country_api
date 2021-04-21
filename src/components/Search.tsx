@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Glass from "../assets/glass";
+
 export default function Search() {
   const [hidden, setHidden] = useState(true);
   return (
-    <div className="h-1/6 flex justify-between items-center dark:bg-dark-background">
+    <div className="h-32 flex justify-between items-center dark:bg-dark-background">
       <form
         action="GET"
         className="text-xs mx-16 px-6 py-3 w-1/3 rounded flex items-center shadow dark:bg-dark-elements"
