@@ -15,7 +15,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="Search for a country..."
-          className="dark:bg-dark-elements px-5 w-full outline-none"
+          className="bg-light-back dark:bg-dark-elements px-5 w-full outline-none"
         />
       </form>
       <div>
