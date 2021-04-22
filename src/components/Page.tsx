@@ -28,10 +28,10 @@ const Page = ({
   border,
 }: IPage) => {
   return (
-    <div className="flex justify-start align-middle mx-16 h-screen">
-      <div className="w-1/3">
+    <div className="flex justify-start align-middle mx-16">
+      <div>
         <div
-          className="h-80 w-full"
+          className="h-72 w-100"
           style={{
             background: `url(${flag})`,
             backgroundPosition: "center",
@@ -40,9 +40,9 @@ const Page = ({
           }}
         ></div>
       </div>
-      <div className="w-1/3 ml-48 h-80">
+      <div className="w-1/2 ml-44 h-80">
         <h1 className="text-3xl font-semibold my-5">{name}</h1>
-        <div className="text-sm grid grid-cols-2 gap-3 my-8">
+        <div className="text-sm grid grid-cols-2 gap-2 my-8">
           <div>
             Native Name: <a className="font-light">{native}</a>
           </div>
@@ -68,7 +68,7 @@ const Page = ({
             Languages: <a className="font-light">{lang}</a>
           </div>
         </div>
-        <nav>
+        <nav className="text-sm my-2">
           Border Countries:{" "}
           {border.map((item, index) => (
             <a
