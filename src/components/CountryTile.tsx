@@ -1,19 +1,20 @@
 import React from "react";
 
-interface Tile {
-  image: string;
+export interface ITile {
+  flag: string;
   name: string;
   population: number;
   region: string;
   capital: string;
 }
-const CountryTile = ({ image, name, population, region, capital }: Tile) => {
+
+const CountryTile = ({ flag, name, population, region, capital }: ITile) => {
   return (
-    <div className=" m-6 h-64 w-52 dark:bg-dark-elements shadow font-normal">
+    <div className="m-6 h-64 w-52 dark:bg-dark-elements shadow font-normal cursor-pointer">
       <div
         className="h-32"
         style={{
-          background: `url(${image})`,
+          background: `url(${flag})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
