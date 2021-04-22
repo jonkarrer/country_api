@@ -60,7 +60,7 @@ function App() {
       ) : (
         <div className="flex py-16">
           <div
-            className="bg-light-back text-xs mx-16 px-6 py-1.5 w-1/8 rounded flex items-center shadow dark:bg-dark-elements"
+            className="cursor-pointer bg-light-back text-xs mx-16 px-6 py-1.5 w-1/8 rounded flex items-center shadow dark:bg-dark-elements"
             onClick={() => setShowPage(true)}
           >
             <Arrow />
