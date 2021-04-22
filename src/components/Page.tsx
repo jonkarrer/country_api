@@ -73,7 +73,7 @@ const Page = ({
           {border.map((item, index) => (
             <a
               key={index}
-              className="font-light text-sm py-2 px-4 bg-light-back mx-1 dark:bg-dark-elements"
+              className="font-light text-sm py-1 px-2 bg-light-back mx-1 dark:bg-dark-elements"
             >
               {item}
             </a>
