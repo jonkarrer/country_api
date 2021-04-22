@@ -40,7 +40,7 @@ const Page = ({
           }}
         ></div>
       </div>
-      <div className="w-1/2 ml-44 h-80">
+      <div className="w-100 ml-44 h-80">
         <h1 className="text-3xl font-semibold my-5">{name}</h1>
         <div className="text-sm grid grid-cols-2 gap-2 my-8">
           <div>
