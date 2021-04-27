@@ -10,7 +10,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [homePage, showHomePage] = useState(true);
   const [flag, setFlag] = useState(<></>);
-
+  const [filter, setFilter] = useState("Africa");
+  const [filterSwitch, turnOnFilter] = useState(false);
+  function filterByRegion(item: any) {
+    if (filterSwitch === false) {
+      return item;
+    }
+    if (item.region === filter) {
+      return item;
+    }
+  }
   useEffect(() => {
     //Fetch API
     async function getData() {
@@ -79,18 +88,20 @@ function App() {
           {loading ? (
             <div>....Loading</div>
           ) : (
-            countries.map((item: ITile, index) => (
-              <div onClick={() => openCountry(index)}>
-                <Tile
-                  key={index}
-                  flag={item.flag}
-                  name={item.name}
-                  population={item.population}
-                  region={item.region}
-                  capital={item.capital}
-                />
-              </div>
-            ))
+            countries
+              .filter((item: ITile) => filterByRegion(item))
+              .map((item: ITile, index) => (
+                <div onClick={() => openCountry(index)}>
+                  <Tile
+                    key={index}
+                    flag={item.flag}
+                    name={item.name}
+                    population={item.population}
+                    region={item.region}
+                    capital={item.capital}
+                  />
+                </div>
+              ))
           )}
         </div>
       ) : (
