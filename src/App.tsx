@@ -32,6 +32,9 @@ function App() {
   }, []);
 
   const openCountry = (index: number) => {
+    let filteredCountries = countries.filter((item: ITile) =>
+      filterByRegion(item)
+    );
     let {
       //Destructure API Data
       flag,
@@ -41,11 +44,11 @@ function App() {
       region,
       subregion,
       capital,
-      languages, //Array one object
+      languages,
       topLevelDomain,
-      currencies, // Array one object
+      currencies,
       borders,
-    } = countries[index];
+    } = filteredCountries[index];
 
     showHomePage(false); //Hide home page
 
@@ -71,7 +74,7 @@ function App() {
   return (
     <div className="font-custom dark:text-dark-text dark:bg-dark-background">
       {homePage ? (
-        <Search />
+        <Search filterSwitch={turnOnFilter} filter={setFilter} />
       ) : (
         <div className="flex py-16">
           <div

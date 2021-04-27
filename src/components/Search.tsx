@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Glass from "../assets/glass";
 
-export default function Search() {
+export default function Search({ filterSwitch, filter }: any) {
   const [hidden, setHidden] = useState(true);
+  const handleClick = (item: string) => {
+    filterSwitch(true);
+    filter(item);
+  };
   return (
     <div className="sticky top-0 z-20 h-32 flex justify-between items-center">
       <form
@@ -29,13 +33,38 @@ export default function Search() {
         <ul
           className={`${
             hidden ? "hidden" : "block"
-          } absolute font-light text-xs space-y-2.5 mx-16 p-8 py-3 my-1 rounded items-center shadow cursor-pointer dark:bg-dark-elements`}
+          } absolute font-light text-xs space-y-2.5 mx-16 p-8 py-3 my-1 rounded items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements`}
         >
-          <li className="hover:text-regular-purple">Africa</li>
-          <li className="hover:text-regular-purple">America</li>
-          <li className="hover:text-regular-purple">Asia</li>
-          <li className="hover:text-regular-purple">Europe</li>
-          <li className="hover:text-regular-purple">Oceania</li>
+          <li
+            className="hover:text-regular-purple"
+            onClick={() => handleClick("Africa")}
+          >
+            Africa
+          </li>
+          <li
+            className="hover:text-regular-purple"
+            onClick={() => handleClick("Americas")}
+          >
+            Americas
+          </li>
+          <li
+            className="hover:text-regular-purple"
+            onClick={() => handleClick("Asia")}
+          >
+            Asia
+          </li>
+          <li
+            className="hover:text-regular-purple"
+            onClick={() => handleClick("Europe")}
+          >
+            Europe
+          </li>
+          <li
+            className="hover:text-regular-purple"
+            onClick={() => handleClick("Oceania")}
+          >
+            Oceania
+          </li>
         </ul>
       </div>
     </div>
