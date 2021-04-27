@@ -1,8 +1,23 @@
 import React, { useState } from "react";
 import Glass from "../assets/glass";
 
-export default function Search({ filterSwitch, filter }: any) {
+export default function Search({ searchSwitch, filterSwitch, filter }: any) {
   const [hidden, setHidden] = useState(true);
+  const [inputValue, setValue] = useState("");
+  const handleChange = (event: any) => {
+    let criteria =
+      event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1);
+    if (event.target.value != "") {
+      filterSwitch(true);
+      searchSwitch(true);
+      setValue(event.target.value);
+      filter(criteria);
+    } else {
+      filterSwitch(false);
+      searchSwitch(false);
+      setValue(event.target.value);
+    }
+  };
   const handleClick = (item: string) => {
     filterSwitch(true);
     filter(item);
@@ -20,6 +35,8 @@ export default function Search({ filterSwitch, filter }: any) {
           type="text"
           placeholder="Search for a country..."
           className="bg-light-back dark:bg-dark-elements px-5 w-full outline-none"
+          onChange={handleChange}
+          value={inputValue}
         />
       </form>
       <div>

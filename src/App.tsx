@@ -12,12 +12,19 @@ function App() {
   const [flag, setFlag] = useState(<></>);
   const [filter, setFilter] = useState("Africa");
   const [filterSwitch, turnOnFilter] = useState(false);
+  const [searchSwitch, turnOnSearch] = useState(false);
   function filterByRegion(item: any) {
     if (filterSwitch === false) {
       return item;
-    }
-    if (item.region === filter) {
-      return item;
+    } else if (filterSwitch) {
+      if (searchSwitch) {
+        if (item.name === filter) {
+          return item;
+        }
+      }
+      if (item.region === filter) {
+        return item;
+      }
     }
   }
   useEffect(() => {
@@ -74,7 +81,11 @@ function App() {
   return (
     <div className="font-custom dark:text-dark-text dark:bg-dark-background">
       {homePage ? (
-        <Search filterSwitch={turnOnFilter} filter={setFilter} />
+        <Search
+          searchSwitch={turnOnSearch}
+          filterSwitch={turnOnFilter}
+          filter={setFilter}
+        />
       ) : (
         <div className="flex py-16">
           <div
