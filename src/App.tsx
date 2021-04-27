@@ -79,7 +79,7 @@ function App() {
     setFlag(renderSelectedCountry);
   };
   return (
-    <div className="font-custom dark:text-dark-text dark:bg-dark-background">
+    <div className="font-custom dark:text-dark-text dark:bg-dark-background ">
       {homePage ? (
         <Search
           searchSwitch={turnOnSearch}
@@ -89,7 +89,7 @@ function App() {
       ) : (
         <div className="flex py-16">
           <div
-            className="cursor-pointer bg-light-back text-xs mx-16 px-6 py-1.5 w-1/8 rounded flex items-center shadow dark:bg-dark-elements"
+            className="cursor-pointer bg-light-back text-xs mx-5 sm:mx-16 px-6 py-1.5 w-1/8 rounded flex items-center shadow dark:bg-dark-elements"
             onClick={() => showHomePage(true)}
           >
             <Arrow />

@@ -30,10 +30,10 @@ const Page = ({
   let language = lang[0].name;
   let money = currencies[0].name;
   return (
-    <div className="flex justify-start align-middle mx-16">
+    <div className="grid grid-rows-2 m-auto lg:flex lg:justify-start lg:align-middle mx-5 lg:mx-16">
       <div>
         <div
-          className="h-72 w-100"
+          className="h-48 w-72 sm:h-72 sm:w-100"
           style={{
             background: `url(${flag})`,
             backgroundPosition: "center",
@@ -42,7 +42,7 @@ const Page = ({
           }}
         ></div>
       </div>
-      <div className="w-100 ml-44 h-80">
+      <div className="w-50 lg:w-100 lg:ml-44 lg:h-80">
         <h1 className="text-3xl font-semibold my-5">{name}</h1>
         <div className="text-sm grid grid-cols-2 gap-2 my-8">
           <div>

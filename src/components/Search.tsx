@@ -23,10 +23,10 @@ export default function Search({ searchSwitch, filterSwitch, filter }: any) {
     filter(item);
   };
   return (
-    <div className="sticky top-0 z-20 h-32 flex justify-between items-center">
+    <div className="sticky top-0 z-20 h-32 flex sm:justify-between justify-around items-center">
       <form
         action="GET"
-        className="bg-light-back text-xs mx-16 px-6 py-3 w-1/3 rounded flex items-center shadow dark:bg-dark-elements"
+        className="bg-light-back text-xs px-2 sm:mx-16 sm:px-6 py-3 w-1/2 sm:w-1/3 rounded flex items-center shadow dark:bg-dark-elements"
       >
         <label htmlFor="input">
           <Glass width={15} />
@@ -42,7 +42,7 @@ export default function Search({ searchSwitch, filterSwitch, filter }: any) {
       <div>
         <div
           onClick={() => setHidden(!hidden)}
-          className=" relative text-xs mx-16 px-6 py-3 rounded flex items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements"
+          className=" relative text-xs sm:mx-16 px-6 py-3 rounded flex items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements"
         >
           <p>Filter by Region</p>
           <span className="ml-5 text-m">&or;</span>
@@ -50,7 +50,7 @@ export default function Search({ searchSwitch, filterSwitch, filter }: any) {
         <ul
           className={`${
             hidden ? "hidden" : "block"
-          } absolute font-light text-xs space-y-2.5 mx-16 p-8 py-3 my-1 rounded items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements`}
+          } absolute font-light text-xs space-y-2.5 sm:mx-16 p-8 py-3 my-1 rounded items-center shadow cursor-pointer bg-light-back dark:bg-dark-elements`}
         >
           <li
             className="hover:text-regular-purple"
