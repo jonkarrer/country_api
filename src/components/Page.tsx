@@ -9,8 +9,8 @@ interface IPage {
   sub: string;
   capital: string;
   domain: string;
-  currencies: string;
-  lang: string;
+  currencies: any;
+  lang: any;
   border: [];
 }
 
@@ -27,6 +27,8 @@ const Page = ({
   lang,
   border,
 }: IPage) => {
+  let language = lang[0].name;
+  let money = currencies[0].name;
   return (
     <div className="flex justify-start align-middle mx-16">
       <div>
@@ -62,10 +64,10 @@ const Page = ({
             Top Level: <a className="font-light">{domain}</a>
           </div>
           <div>
-            Currencies: <a className="font-light">{currencies}</a>
+            Currencies: <a className="font-light">{money}</a>
           </div>
           <div>
-            Languages: <a className="font-light">{lang}</a>
+            Language: <a className="font-light">{language}</a>
           </div>
         </div>
         <nav className="text-sm my-2">

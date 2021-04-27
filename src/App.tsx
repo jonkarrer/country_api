@@ -8,9 +8,11 @@ import Arrow from "./assets/arrow";
 function App() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showPage, setShowPage] = useState(true);
-  const [page, setPage] = useState(<></>);
+  const [homePage, showHomePage] = useState(true);
+  const [flag, setFlag] = useState(<></>);
+
   useEffect(() => {
+    //Fetch API
     async function getData() {
       let response = await fetch("https://restcountries.eu/rest/v2/all");
       let data = await response.json();
@@ -19,8 +21,10 @@ function App() {
     }
     getData();
   }, []);
-  const handleClick = (index: number) => {
+
+  const openCountry = (index: number) => {
     let {
+      //Destructure API Data
       flag,
       name,
       nativeName,
@@ -29,12 +33,14 @@ function App() {
       subregion,
       capital,
       languages, //Array one object
-      topLevelDomain, //Array[0]
+      topLevelDomain,
       currencies, // Array one object
-      borders, //Array
+      borders,
     } = countries[index];
-    setShowPage(false);
-    let newPage = (
+
+    showHomePage(false); //Hide home page
+
+    let renderSelectedCountry = (
       <div>
         <Page
           flag={flag}
@@ -45,36 +51,36 @@ function App() {
           sub={subregion}
           capital={capital}
           domain={topLevelDomain[0]}
-          lang={"lang"}
-          currencies={"money"}
+          lang={languages}
+          currencies={currencies}
           border={borders}
         />
       </div>
     );
-    setPage(newPage);
+    setFlag(renderSelectedCountry);
   };
   return (
     <div className="font-custom dark:text-dark-text dark:bg-dark-background">
-      {showPage ? (
+      {homePage ? (
         <Search />
       ) : (
         <div className="flex py-16">
           <div
             className="cursor-pointer bg-light-back text-xs mx-16 px-6 py-1.5 w-1/8 rounded flex items-center shadow dark:bg-dark-elements"
-            onClick={() => setShowPage(true)}
+            onClick={() => showHomePage(true)}
           >
             <Arrow />
             <p className="ml-2">Back</p>
           </div>
         </div>
       )}
-      {showPage ? (
+      {homePage ? (
         <div className="flex flex-wrap justify-center w-screen ">
           {loading ? (
             <div>....Loading</div>
           ) : (
             countries.map((item: ITile, index) => (
-              <div onClick={() => handleClick(index)}>
+              <div onClick={() => openCountry(index)}>
                 <Tile
                   key={index}
                   flag={item.flag}
@@ -88,7 +94,7 @@ function App() {
           )}
         </div>
       ) : (
-        <div>{page}</div>
+        <div>{flag}</div>
       )}
     </div>
   );
