@@ -5,7 +5,7 @@ import useDarkMode from "./hooks/useDarkMode";
 const Nav = () => {
   const [colorTheme, setTheme]: any = useDarkMode();
   return (
-    <nav className="h-16 w-screen flex justify-between items-center shadow px-3 sm:px-16 dark:bg-dark-elements dark:text-dark-text">
+    <nav className="h-16 flex justify-between items-center shadow px-3 sm:px-16 dark:bg-dark-elements dark:text-dark-text">
       <h1 className="font-bold font-mono text-lg">Where in the world?</h1>
       <div
         className="flex items-center cursor-pointer"

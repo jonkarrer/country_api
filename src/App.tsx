@@ -79,7 +79,7 @@ function App() {
     setFlag(renderSelectedCountry);
   };
   return (
-    <div className="font-custom dark:text-dark-text dark:bg-dark-background ">
+    <div className="font-custom dark:text-dark-text dark:bg-dark-background overflow-hidden ">
       {homePage ? (
         <Search
           searchSwitch={turnOnSearch}
