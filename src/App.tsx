@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     //Fetch API
     async function getData() {
-      let response = await fetch("https://restcountries.eu/rest/v2/all");
+      let response = await fetch("https://restcountries.com/v2/all");
       let data = await response.json();
       setCountries(data);
       setLoading(false);
